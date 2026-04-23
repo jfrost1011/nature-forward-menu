@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature Forward SoCal Bistro</title>
+<meta name="description" content="View our full menu — French-SoCal bistro in UTC, San Diego. Brunch, dinner, happy hour.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: #faf9f7;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .landing {
+    max-width: 420px;
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 24px;
+  }
+  .logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .logo .sub {
+    font-size: 0.85em;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 4px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+  }
+
+  .card .intro {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .coupon-badge {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+    text-align: left;
+  }
+  .form-group label {
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus {
+    outline: none;
+    border-color: #1a1a1a;
+  }
+
+  .or-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 14px 0;
+    font-size: 0.75em;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .or-divider::before, .or-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+  .btn:hover { background: #333; }
+  .btn:active { background: #000; }
+
+  .skip {
+    display: block;
+    margin-top: 16px;
+    font-size: 0.8em;
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .skip:hover { color: #666; }
+
+  .fine-print {
+    font-size: 0.65em;
+    color: #bbb;
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+
+  /* Success state */
+  .success-state { display: none; }
+  .success-state.show { display: block; }
+  .form-state.hide { display: none; }
+
+  .success-state h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8em;
+    margin-bottom: 12px;
+    color: #2d5016;
+  }
+  .success-state .coupon-code {
+    background: #f5f0e8;
+    border: 2px dashed #c5a55a;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .success-state .coupon-code .code {
+    font-size: 1.8em;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+  }
+  .success-state .coupon-code .offer {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .menu-btn {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    margin-top: 16px;
+    transition: background 0.2s;
+  }
+  .menu-btn:hover { background: #333; }
+
+  /* Contact footer */
+  .contact-footer {
+    margin-top: 24px;
+    font-size: 0.75em;
+    color: #999;
+    line-height: 1.6;
+  }
+  .contact-footer a {
+    color: #888;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="landing">
+  <div class="logo">
+    <h1>NATURE FORWARD</h1>
+    <div class="sub">SoCal Bistro</div>
+  </div>
+
+  <div class="card">
+    <!-- FORM STATE -->
+    <div class="form-state" id="formState">
+      <h2>Welcome to Our Table</h2>
+      <p class="intro">View our full menu and receive a special welcome offer.</p>
+
+      <div class="coupon-badge">10% Off Your Next Visit</div>
+
+      <form id="captureForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
+        </div>
+
+        <div class="or-divider">or</div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(858) 555-0000" autocomplete="tel">
+        </div>
+
+        <button type="submit" class="btn">View Menu &amp; Get Coupon</button>
+      </form>
+
+      <a class="skip" onclick="showMenu()">Just show me the menu</a>
+
+      <p class="fine-print">We'll send you our seasonal specials and events. Unsubscribe anytime. No spam, ever.</p>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div class="success-state" id="successState">
+      <h2>Thank You!</h2>
+      <p class="intro">Here's your welcome coupon. Show this to your server on your next visit.</p>
+
+      <div class="coupon-code">
+        <div class="code">WELCOME10</div>
+        <div class="offer">10% off your next visit at Nature Forward</div>
+      </div>
+
+      <p class="intro" style="font-size:0.8em; margin-top:12px;">We've also sent this to your <span id="sentTo">email</span>.</p>
+
+      <a href="menu.html" class="menu-btn">View Full Menu</a>
+    </div>
+  </div>
+
+  <div class="contact-footer">
+    <strong>Nature Forward SoCal Bistro</strong><br>
+    8935 Towne Centre Dr #110, San Diego, CA 92121<br>
+    <a href="tel:+18583526808">(858) 352-6808</a><br>
+    <a href="https://nature-forward.com">nature-forward.com</a>
+  </div>
+</div>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!email && !phone) {
+      document.getElementById('email').focus();
+      return;
+    }
+
+    // Store the lead (in production, this would POST to an API)
+    const lead = { email, phone, timestamp: new Date().toISOString(), source: 'qr-menu' };
+    console.log('Lead captured:', lead);
+
+    // Save to localStorage as backup
+    const leads = JSON.parse(localStorage.getItem('nf-leads') || '[]');
+    leads.push(lead);
+    localStorage.setItem('nf-leads', JSON.stringify(leads));
+
+    // Show success
+    const sentTo = email ? 'email' : 'phone';
+    document.getElementById('sentTo').textContent = sentTo;
+    document.getElementById('formState').classList.add('hide');
+    document.getElementById('successState').classList.add('show');
+  }
+
+  function showMenu() {
+    window.location.href = 'menu.html';
+  }
+</script>
+</body>
+</html>
