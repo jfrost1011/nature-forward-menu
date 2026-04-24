@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300" version="1.1" role="img" aria-labelledby="title desc">
+  <title id="title">Nature Forward editable logo</title>
+  <desc id="desc">Editable live-text SVG logo with vector leaf mark. No raster image is embedded.</desc>
+  <style>
+    text { fill:#111111; font-family: Georgia, 'Times New Roman', serif; }
+    .word { font-weight:700; font-size:74px; letter-spacing:5px; }
+    .sub { font-size:36px; letter-spacing:2px; }
+    .tag { font-family: Arial, Helvetica, sans-serif; font-size:15px; letter-spacing:1px; }
+  </style>
+  <g id="leaf-mark" transform="translate(360,128)">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#111111" stroke-width="3"/>
+    <path d="M0 24 C-17 8 -16 -12 -2 -25 C15 -7 15 9 0 24 Z" fill="#111111"/>
+    <path d="M-18 16 C-25 2 -17 -13 -3 -12 C-5 2 -9 11 -18 16 Z" fill="#111111"/>
+    <path d="M9 15 C17 -2 32 -5 42 0 C31 15 20 21 9 15 Z" fill="#111111"/>
+  </g>
+  <text x="360" y="80" class="word" text-anchor="middle">NATURE</text>
+  <text x="360" y="150" class="word" text-anchor="middle">FORWARD</text>
+  <text x="360" y="205" class="sub" text-anchor="middle">SOCAL BISTRO</text>
+  <text x="360" y="235" class="tag" text-anchor="middle">ENJOY OUR EVERYTHING FROM SCRATCH KIND OF KITCHEN</text>
+</svg>

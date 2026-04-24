@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="-64 -64 128 128" version="1.1" role="img" aria-labelledby="title desc">
+  <title id="title">Nature Forward leaf mark</title>
+  <desc id="desc">Clean vector leaf mark for favicon, logo icon, or brand use. No raster image is embedded.</desc>
+  <circle cx="0" cy="0" r="58" fill="none" stroke="#111111" stroke-width="5"/>
+  <path d="M0 42 C-30 14 -28 -24 -4 -48 C30 -14 28 16 0 42 Z" fill="#111111"/>
+  <path d="M-32 24 C-44 0 -30 -27 -4 -24 C-8 2 -16 18 -32 24 Z" fill="#111111"/>
+  <path d="M16 24 C30 -8 58 -12 76 -2 C56 28 34 38 16 24 Z" fill="#111111"/>
+</svg>

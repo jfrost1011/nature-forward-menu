@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nature Forward SoCal Bistro</title>
+  <style>
+    :root {
+      --ink: #111;
+      --paper: #fff;
+      --soft: #f6f4ef;
+      --line: #d7d1c5;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--soft);
+      line-height: 1.5;
+    }
+    header, section, footer { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .hero {
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 64px 0 48px;
+    }
+    .logo {
+      width: min(460px, 85vw);
+      height: auto;
+      display: block;
+      margin: 0 auto 22px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 0.95;
+      margin: 0 0 16px;
+      letter-spacing: 0.04em;
+    }
+    .tagline {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      font-size: clamp(16px, 2.2vw, 21px);
+    }
+    .buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: 999px;
+      background: var(--paper);
+      font-weight: 700;
+    }
+    .button.primary { background: var(--ink); color: var(--paper); }
+    .section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+      font-size: clamp(28px, 4vw, 44px);
+      margin: 56px 0 22px;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+    .menu-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 16px 50px rgba(0,0,0,.06);
+    }
+    .menu-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 44px auto;
+    }
+    .info-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+    }
+    footer {
+      padding: 42px 0 64px;
+      text-align: center;
+      font-size: 14px;
+    }
+    @media (max-width: 780px) {
+      .menu-grid, .info { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <img class="logo" src="nature_forward_logo_vector_trace.svg" alt="Nature Forward SoCal Bistro logo">
+      <h1>Nature Forward<br>SoCal Bistro</h1>
+      <p class="tagline">Scratch-made, local, organic-forward food in a clean bistro experience.</p>
+      <nav class="buttons" aria-label="Primary">
+        <a class="button primary" href="#menus">View Menus</a>
+        <a class="button" href="nature_forward_full_spread_vector_trace.pdf">Download Print Menu</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="menus">
+    <h2 class="section-title">Menus</h2>
+    <div class="menu-grid">
+      <article class="menu-card">
+        <img src="nature_forward_brunch_menu_vector_trace.svg" alt="Vector brunch menu">
+      </article>
+      <article class="menu-card">
+        <img src="nature_forward_dinner_menu_vector_trace.svg" alt="Vector dinner menu">
+      </article>
+    </div>
+  </section>
+
+  <section class="info" aria-label="Restaurant details">
+    <div class="info-card">
+      <strong>Local & Sustainable</strong>
+      <p>Built around fresh, organic-forward ingredients.</p>
+    </div>
+    <div class="info-card">
+      <strong>Happy Hour</strong>
+      <p>2-6 PM - draft beer and red wine specials.</p>
+    </div>
+    <div class="info-card">
+      <strong>Visit</strong>
+      <p>8935 Towne Centre Dr #110, San Diego, CA 92121</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Replace copy, links, and QR assets as needed before publishing.</p>
+  </footer>
+</body>
+</html>
