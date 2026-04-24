@@ -10,49 +10,28 @@
     background: #fff;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     min-height: 100vh;
     padding: 0;
   }
-  .menu-spread {
+  .menu-wrap {
     width: 100%;
     max-width: 1200px;
-    display: flex;
-    background: #fff;
   }
-  .menu-spread .page {
-    flex: 1;
-    min-width: 0;
-  }
-  .menu-spread .page img {
+  .menu-wrap img {
     width: 100%;
     height: auto;
     display: block;
   }
-
-  /* Mobile: stack vertically */
-  @media (max-width: 768px) {
-    .menu-spread {
-      flex-direction: column;
-    }
-  }
-
-  /* Print: landscape, fit one page */
   @media print {
     body { padding: 0; margin: 0; }
-    .menu-spread { max-width: 100%; }
+    .menu-wrap { max-width: 100%; }
     @page { margin: 0.25in; size: landscape letter; }
   }
 </style>
 </head>
 <body>
-  <div class="menu-spread">
-    <div class="page">
-      <img src="assets/nature_forward_vector_package/nature_forward_brunch_menu_vector_trace.svg" alt="Nature Forward Brunch Menu">
-    </div>
-    <div class="page">
-      <img src="assets/nature_forward_vector_package/nature_forward_dinner_menu_vector_trace.svg" alt="Nature Forward Dinner Menu">
-    </div>
+  <div class="menu-wrap">
+    <img src="assets/nature_forward_vector_package/nature_forward_editable_menu_template.svg" alt="Nature Forward SoCal Bistro — Full Menu">
   </div>
 </body>
 </html>
