@@ -237,18 +237,16 @@
 
       <form id="captureForm" onsubmit="handleSubmit(event)">
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
         </div>
-
-        <div class="or-divider">or</div>
 
         <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="(858) 555-0000" autocomplete="tel">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required>
         </div>
 
-        <button type="submit" class="btn">View Menu &amp; Get Coupon</button>
+        <button type="submit" class="btn">View Menu &amp; Get 10% Off</button>
       </form>
 
       <a class="skip" onclick="showMenu()">Just show me the menu</a>
@@ -283,16 +281,17 @@
 <script>
   function handleSubmit(e) {
     e.preventDefault();
+    const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
 
-    if (!email && !phone) {
-      document.getElementById('email').focus();
+    if (!name || !email) {
+      if (!name) document.getElementById('name').focus();
+      else document.getElementById('email').focus();
       return;
     }
 
     // Store the lead (in production, this would POST to an API)
-    const lead = { email, phone, timestamp: new Date().toISOString(), source: 'qr-menu' };
+    const lead = { name, email, timestamp: new Date().toISOString(), source: 'qr-menu' };
     console.log('Lead captured:', lead);
 
     // Save to localStorage as backup
@@ -301,8 +300,7 @@
     localStorage.setItem('nf-leads', JSON.stringify(leads));
 
     // Show success
-    const sentTo = email ? 'email' : 'phone';
-    document.getElementById('sentTo').textContent = sentTo;
+    document.getElementById('sentTo').textContent = 'email';
     document.getElementById('formState').classList.add('hide');
     document.getElementById('successState').classList.add('show');
   }
