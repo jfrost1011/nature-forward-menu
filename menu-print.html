@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #fff; }
+
+  .spread {
+    width: 1536px;
+    height: 1187px;
+    display: flex;
+    font-family: 'Lato', Arial, sans-serif;
+    color: #111;
+    position: relative;
+    overflow: hidden;
+    font-size: 12px;
+  }
+
+  .page {
+    width: 768px;
+    height: 1187px;
+    position: relative;
+    padding: 12px 28px;
+    overflow: hidden;
+  }
+
+  .page-left { border-right: 1px solid #111; }
+
+  h1.logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    text-align: center;
+    font-size: 46px;
+    letter-spacing: 4px;
+    line-height: 1.05;
+    margin-top: 4px;
+  }
+  .logo-sub {
+    font-family: 'Playfair Display', Georgia, serif;
+    text-align: center;
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin-top: 1px;
+  }
+  .tagline {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+    color: #333;
+  }
+
+  .commitment-box {
+    border: 1px solid #111;
+    border-radius: 6px;
+    padding: 5px 12px;
+    margin: 5px 50px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-top: 6px;
+    margin-bottom: 3px;
+  }
+  .section-title-small {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.8px;
+  }
+
+  .cols { display: flex; gap: 8px; }
+  .col { flex: 1; }
+
+  .menu-item {
+    margin-bottom: 3px;
+  }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .item-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .item-dots {
+    flex: 1;
+    border-bottom: 1px dotted #999;
+    margin: 0 4px;
+    min-width: 20px;
+    position: relative;
+    top: -3px;
+  }
+  .item-price {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .item-desc {
+    font-size: 11.5px;
+    color: #333;
+    line-height: 1.35;
+    margin-top: 1px;
+  }
+
+  .box-section {
+    border: 1px solid #111;
+    border-radius: 6px;
+    padding: 5px 8px 4px;
+    margin-top: 4px;
+  }
+
+  .pastry-box {
+    border: 1px solid #111;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-top: 3px;
+    text-align: center;
+  }
+  .pastry-box .script {
+    font-family: 'Dancing Script', cursive;
+    font-size: 17px;
+  }
+
+  /* Dinner side */
+  .dinner-title {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 44px;
+    margin-top: 4px;
+  }
+  .dinner-subtitle {
+    text-align: center;
+    font-size: 12.5px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+  .leaf-divider {
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+    margin: 2px 0;
+  }
+
+  .section-header-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 7px;
+    margin-bottom: 3px;
+  }
+  .section-header-row .line {
+    width: 40px;
+    height: 0;
+    border-top: 1px solid #111;
+  }
+  .section-header-row .title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .section-header-row .leaf { font-size: 10px; color: #555; }
+
+  .qr-box {
+    border: 1px solid #111;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 8px 16px;
+    margin: 5px 40px;
+  }
+  .qr-box .qr-text {
+    text-align: center;
+  }
+  .qr-box .qr-text h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    margin-bottom: 3px;
+  }
+  .qr-box .qr-text p {
+    font-size: 12px;
+    color: #555;
+  }
+  .qr-box img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .thankyou {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+
+  .footer-info {
+    text-align: center;
+    font-size: 11px;
+    color: #888;
+    margin-top: 4px;
+  }
+  .footer-left {
+    position: absolute;
+    bottom: 8px;
+    left: 30px;
+    right: 30px;
+    text-align: center;
+    font-size: 9px;
+    color: #888;
+  }
+
+  /* Decorative leaf branches */
+  .branch-decor {
+    position: absolute;
+    pointer-events: none;
+  }
+  .branch-decor svg {
+    display: block;
+  }
+
+  .note {
+    font-size: 11px;
+    text-align: center;
+    color: #555;
+    font-style: italic;
+    margin: 2px 0;
+  }
+  .sub-note {
+    font-size: 10.5px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 4px;
+  }
+
+  .wine-row {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 3px;
+    font-weight: 400;
+  }
+  .sub-note {
+    font-size: 10.5px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="spread">
+  <!-- Hidden SVG defs for leaf artwork -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;">
+    <defs>
+      <g id="leaf">
+        <path d="M0,0 C8,-12 22,-12 32,0 C22,12 8,12 0,0 Z" fill="none" stroke="#111" stroke-width="0.9"/>
+        <path d="M0,0 L30,0" fill="none" stroke="#111" stroke-width="0.9"/>
+        <path d="M11,0 L7,-5 M15,0 L11,6 M20,0 L16,-6 M24,0 L20,5" fill="none" stroke="#111" stroke-width="0.9"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ===== LEFT PAGE: BRUNCH ===== -->
+  <div class="page page-left">
+    <!-- Top-left branch -->
+    <div class="branch-decor" style="top:2px;left:2px;">
+      <svg width="160" height="50" viewBox="0 0 160 50">
+        <g transform="translate(5,6) scale(1.1)">
+          <path d="M0,0 C40,15 75,25 120,18" fill="none" stroke="#111" stroke-width="1.1"/>
+          <g transform="translate(18,-2) rotate(-35) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(32,7) rotate(20) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(47,10) rotate(-30) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(62,14) rotate(28) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(80,17) rotate(-25) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(98,19) rotate(18) scale(0.8)"><use href="#leaf"/></g>
+        </g>
+      </svg>
+    </div>
+    <!-- Top-right branch -->
+    <div class="branch-decor" style="top:2px;right:2px;">
+      <svg width="160" height="50" viewBox="0 0 160 50">
+        <g transform="translate(155,6) scale(-1.1,1.1)">
+          <path d="M0,0 C40,15 75,25 120,18" fill="none" stroke="#111" stroke-width="1.1"/>
+          <g transform="translate(18,-2) rotate(-35) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(32,7) rotate(20) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(47,10) rotate(-30) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(62,14) rotate(28) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(80,17) rotate(-25) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(98,19) rotate(18) scale(0.8)"><use href="#leaf"/></g>
+        </g>
+      </svg>
+    </div>
+
+    <h1 class="logo">NATURE<br>FORWARD</h1>
+    <div class="logo-sub">SOCAL BISTRO</div>
+    <div class="tagline">ENJOY OUR EVERYTHING FROM SCRATCH KIND OF KITCHEN</div>
+
+    <div class="commitment-box">
+      NF COMMITMENT &nbsp;•&nbsp; HIGH QUALITY INGREDIENTS<br>
+      UNREFINED SALT &amp; NATURAL SUGARS &nbsp;•&nbsp; ORGANIC &amp; LOCAL SUPPORTERS<br>
+      LOCAL ORGANIC EGGS &nbsp;•&nbsp; EUROPEAN CHEESE
+    </div>
+
+    <div class="cols">
+      <!-- First Bites -->
+      <div class="col">
+        <div class="section-title">FIRST BITES</div>
+        <div class="menu-item">
+          <div class="item-header"><span class="item-name">Sylvia LR Scone</span><span class="item-dots"></span><span class="item-price">7</span></div>
+          <div class="item-desc">Raspberries, local seasonal cream, lemon brûlée, raw honey</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header"><span class="item-name">Roasted Banana Bread</span><span class="item-dots"></span><span class="item-price">8</span></div>
+          <div class="item-desc">House cinnamon organic butter / dark cherry jam</div>
+        </div>
+      </div>
+      <!-- Pancakes -->
+      <div class="col">
+        <div class="section-title">PANCAKES &amp; FRENCH TOASTS</div>
+        <div class="menu-item">
+          <div class="item-header"><span class="item-name">Paris French Toast</span><span class="item-dots"></span><span class="item-price">16</span></div>
+          <div class="item-desc">French brioche / strawberry / banana / vanilla whipped cream</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-header"><span class="item-name">Nutella Crepe</span><span class="item-dots"></span><span class="item-price">16</span></div>
+          <div class="item-desc">Nutella filled / banana / chocolate drizzle / vanilla whipped cream</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols" style="align-items:flex-start;">
+      <!-- Le Brunch Sweet -->
+      <div class="col">
+        <div class="box-section">
+          <div class="section-title" style="margin-top:0;">LE BRUNCH / SWEET</div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Bread Strawberry Jam</span><span class="item-dots"></span><span class="item-price">12</span></div><div class="item-desc">English muffin / sourdough / pain au levain / GF bread + house jam or cinnamon butter</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Parfaits &amp; Bowls</span><span class="item-dots"></span><span class="item-price">9</span></div><div class="item-desc">Cereza / 9 / Granada / 9</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">North Shore Acai Bowl</span><span class="item-dots"></span><span class="item-price">14</span></div><div class="item-desc">Strawberry / banana / blueberries / cacao butter / almonds / granola</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Purple Parfait</span><span class="item-dots"></span><span class="item-price">13</span></div><div class="item-desc">Acai sorbet / granola / European yogurt or Organic cultured dark cherry / blueberries / blackberries / walnuts / almonds / raw local Aloha honey / banana</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Simply Fruit</span><span class="item-dots"></span><span class="item-price">12</span></div><div class="item-desc">UPGRADED Organic Strauss Yogurt 2</div></div>
+        </div>
+
+        <div class="pastry-box">
+          <div class="section-title" style="margin-top:0;">NF PASTRIES</div>
+          <div class="section-title-small">HOUSE EUROPEAN STYLE<br>SCONES &amp; CROISSANTS</div>
+          <div class="script">Made with local ingredients</div>
+        </div>
+
+        <div class="section-title">SALADS</div>
+        <div class="item-desc" style="margin-bottom:4px;">Sub protein for 2 • veg option / grilled tofu / local marinated goat cheese / wild mushroom mix</div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Chicken Caesar</span><span class="item-dots"></span><span class="item-price">20</span></div><div class="item-desc">Chopped romaine / rosemary grilled or blackened organic chicken / beans / aged grana padano / sourdough roasted croutons / roasted caesar dressing / crunchy baked quinoa / SUB Rosemary Wild Salmon 4</div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Wild Salmon</span><span class="item-dots"></span><span class="item-price">24</span></div><div class="item-desc">Norwegian wild / caught salmon / organic spring mix salad / cherry tomatoes / Pecans / cucumbers / pickled onion / roasted almonds / balsamic vinaigrette</div></div>
+      </div>
+
+      <!-- Le Brunch Savory -->
+      <div class="col">
+        <div class="box-section">
+          <div class="section-title" style="margin-top:0;">LE BRUNCH / SAVORY</div>
+          <div class="section-title-small">SPÉCIALITÉS</div>
+          <div class="sub-note">EVOO rosemary potatoes OR vibrant probiotic coleslaw / flamed jalapeño 3</div>
+          <div class="sub-note">Sub Egg 2 &nbsp;|&nbsp; Sub Cashew Tortilla 3 &nbsp;|&nbsp; Sub English Muffin 3</div>
+
+          <div class="menu-item"><div class="item-header"><span class="item-name">Breakfast Burrito</span><span class="item-dots"></span><span class="item-price">17</span></div><div class="item-desc">Small batch tortilla / scrambled egg / cilantro / applewood bacon / aged cheddar / tomato / bell pepper / tomatillo sauce</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Tomatillo Chilaquiles</span><span class="item-dots"></span><span class="item-price">18</span></div><div class="item-desc">House corn chips / cilantro / onion / pinto beans / avocado / sour cream / tomatillo sauce / egg any style</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Huevos Rancheros Verdes</span><span class="item-dots"></span><span class="item-price">17</span></div><div class="item-desc">2 organic fried eggs over house corn tostadas / tomatillo salsa / cilantro / panela cheese / corn / chopped jalapeño / avocado</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Easy's Scrambled Eggs</span><span class="item-dots"></span><span class="item-price">19</span></div><div class="item-desc">Fresh scrambled eggs / sautéed salmon chunks / caramelized onions</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Thin Steak and Eggs</span><span class="item-dots"></span><span class="item-price">35</span></div><div class="item-desc">Ribeye steak / 2 eggs any style / fresh herbs</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">B.Y.O Omelette</span><span class="item-dots"></span><span class="item-price">17</span></div><div class="item-desc">Two 3-egg omelets / add 3 items / served with house slaw &amp; local sourdough / Italian sausage / black forest bacon</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Breakfast Classics</span><span class="item-dots"></span><span class="item-price">17.5</span></div><div class="item-desc">Scrambled eggs / aged Swiss cheese</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">Chef's Benedict</span><span class="item-dots"></span><span class="item-price">17.5</span></div><div class="item-desc">Organic English muffin / organic poached eggs / chef's hollandaise<br>WILD: Avocado / Italian sausage / spinach / parsley garnish<br>VEGGIE: Avocado / mushroom / spinach / parsley garnish<br>KANSAS: Thin steak / tomato</div></div>
+          <div class="menu-item"><div class="item-header"><span class="item-name">TRIO</span><span class="item-dots"></span><span class="item-price">21</span></div><div class="item-desc">One Benedict of each flavor / simple / cali / wild</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-left">
+      (858) 352-6808 &nbsp;&nbsp;|&nbsp;&nbsp; 8935 TOWNE CENTRE DR #110, SAN DIEGO, CA 92122<br>
+      VEGETARIAN &nbsp;•&nbsp; GLUTEN FREE &nbsp;•&nbsp; GLUTEN FREE POSSIBLE<br>
+      For parties of 6+ guests, 18% gratuity will be added. No substitutions.
+    </div>
+  </div>
+
+  <!-- ===== RIGHT PAGE: DINNER ===== -->
+  <div class="page">
+    <!-- Top-left branch (dinner) -->
+    <div class="branch-decor" style="top:2px;left:2px;">
+      <svg width="160" height="50" viewBox="0 0 160 50">
+        <g transform="translate(5,6) scale(1.1)">
+          <path d="M0,0 C40,15 75,25 120,18" fill="none" stroke="#111" stroke-width="1.1"/>
+          <g transform="translate(18,-2) rotate(-35) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(32,7) rotate(20) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(47,10) rotate(-30) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(62,14) rotate(28) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(80,17) rotate(-25) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(98,19) rotate(18) scale(0.8)"><use href="#leaf"/></g>
+        </g>
+      </svg>
+    </div>
+    <!-- Top-right branch (dinner) -->
+    <div class="branch-decor" style="top:2px;right:2px;">
+      <svg width="160" height="50" viewBox="0 0 160 50">
+        <g transform="translate(155,6) scale(-1.1,1.1)">
+          <path d="M0,0 C40,15 75,25 120,18" fill="none" stroke="#111" stroke-width="1.1"/>
+          <g transform="translate(18,-2) rotate(-35) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(32,7) rotate(20) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(47,10) rotate(-30) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(62,14) rotate(28) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(80,17) rotate(-25) scale(0.8)"><use href="#leaf"/></g>
+          <g transform="translate(98,19) rotate(18) scale(0.8)"><use href="#leaf"/></g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="dinner-title">Dinner Menu</div>
+    <div class="dinner-subtitle">Entrées served with potato or salad</div>
+
+    <div class="cols">
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Chef's Specials</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Grilled Steak with Roasted Potatoes &amp; Mushrooms</span><span class="item-dots"></span><span class="item-price">$33</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Grilled Salmon Sandwich</span><span class="item-dots"></span><span class="item-price">$27</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Classic Bistro Burger</span><span class="item-dots"></span><span class="item-price">$18</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Yellow Bulgur with Tomato</span><span class="item-dots"></span><span class="item-price">$16</span></div></div>
+        <div class="item-desc" style="margin-top:2px;">(+Chicken/Steak $8)</div>
+      </div>
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Seafood Special</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="menu-item"><div class="item-name">Chef's Seafood of the Day —</div><div class="item-desc">Ask Your Server</div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Additional Protein: Salmon</span><span class="item-dots"></span><span class="item-price">$11</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Mediterranean Salad</span><span class="item-dots"></span><span class="item-price">$24</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Mediterranean Salad with Salmon</span><span class="item-dots"></span><span class="item-price">$33</span></div></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Pasta</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Pesto Pasta (Chicken/Steak)</span><span class="item-dots"></span><span class="item-price">$25</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Marinara Pasta (Chicken/Steak)</span><span class="item-dots"></span><span class="item-price">$25</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Chicken Alfredo</span><span class="item-dots"></span><span class="item-price">$20</span></div></div>
+      </div>
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Salads</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Farmer's Salad with Local Farm Toppings</span><span class="item-dots"></span><span class="item-price">$19</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Add Protein</span><span class="item-dots"></span><span class="item-price">$11</span></div></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Creations</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Wild Mushroom Crepe</span><span class="item-dots"></span><span class="item-price">$19</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Shakshuka</span><span class="item-dots"></span><span class="item-price">$19</span></div></div>
+        <div class="item-desc">Cooked eggs in cherry tomato sauce / cilantro / jalapeño / feta cheese</div>
+      </div>
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Dessert</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Yogurt, Banana &amp; Cinnamon</span><span class="item-dots"></span><span class="item-price">$15</span></div></div>
+        <div class="item-desc" style="font-style:italic;text-align:center;">House-made yogurt, crafted fresh daily</div>
+        <div class="menu-item" style="margin-top:4px;"><div class="item-header"><span class="item-name">Nutella Crepe</span><span class="item-dots"></span><span class="item-price">$19</span></div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Carrot Cake (Homemade)</span><span class="item-dots"></span><span class="item-price">$9</span></div></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Quiche</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="note">Served with french fries or salad</div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Quiche Marseille</span><span class="item-dots"></span><span class="item-price">$18</span></div><div class="item-desc">Mushroom / spinach / feta / creme fraiche &amp; microgreens</div></div>
+        <div class="menu-item"><div class="item-header"><span class="item-name">Quiche Lorraine</span><span class="item-dots"></span><span class="item-price">$18</span></div><div class="item-desc">Black forest ham / applewood bacon / aged Swiss cheese / gruyere / roasted cherry tomatoes / creme fraiche</div></div>
+      </div>
+      <div class="col" style="display:flex;flex-direction:column;justify-content:flex-end;">
+      </div>
+    </div>
+
+    <div class="cols" style="margin-top:3px;">
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Wine Special</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="wine-row">$39 bottle &nbsp;|&nbsp; $9 glass</div>
+      </div>
+      <div class="col">
+        <div class="section-header-row"><span class="line"></span><span class="leaf">🌿</span><span class="title">Happy Hour 2-6 PM</span><span class="leaf">🌿</span><span class="line"></span></div>
+        <div class="wine-row">$3 Draft Beer &nbsp;|&nbsp; $5 Red Wine</div>
+      </div>
+    </div>
+
+    <div class="qr-box">
+      <div class="qr-text">
+        <h3>SCAN TO VIEW<br>OUR FULL MENU</h3>
+        <p>Tap or scan with your phone camera</p>
+      </div>
+      <img src="qr-menu-link.png" alt="QR Code">
+    </div>
+
+    <div style="position:relative;">
+      <!-- Bottom-left branch -->
+      <div class="branch-decor" style="position:absolute;top:-2px;left:60px;">
+        <svg width="140" height="45" viewBox="0 0 140 45">
+          <g transform="translate(5,6) scale(0.9)">
+            <path d="M0,0 C40,15 75,25 120,18" fill="none" stroke="#111" stroke-width="1.1"/>
+            <g transform="translate(18,-2) rotate(-35) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(32,7) rotate(20) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(47,10) rotate(-30) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(62,14) rotate(28) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(80,17) rotate(-25) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(98,19) rotate(18) scale(0.8)"><use href="#leaf"/></g>
+          </g>
+        </svg>
+      </div>
+      <!-- Bottom-right branch -->
+      <div class="branch-decor" style="position:absolute;top:-2px;right:60px;">
+        <svg width="140" height="45" viewBox="0 0 140 45">
+          <g transform="translate(135,6) scale(-0.9,0.9)">
+            <path d="M0,0 C40,15 75,25 120,18" fill="none" stroke="#111" stroke-width="1.1"/>
+            <g transform="translate(18,-2) rotate(-35) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(32,7) rotate(20) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(47,10) rotate(-30) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(62,14) rotate(28) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(80,17) rotate(-25) scale(0.8)"><use href="#leaf"/></g>
+            <g transform="translate(98,19) rotate(18) scale(0.8)"><use href="#leaf"/></g>
+          </g>
+        </svg>
+      </div>
+      <div class="thankyou">
+        Thank you for supporting<br>
+        local &amp; sustainable.<br>
+        We appreciate you!
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
